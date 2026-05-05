@@ -1,0 +1,136 @@
+/* Layout Principal do Editor */
+.editor-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+/* Barra de Ferramentas (Toolbar) */
+.editor-toolbar {
+  display: flex;
+  padding: 0.5rem 1rem;
+  background-color: #f3f4f6;
+  border-bottom: 1px solid #e5e7eb;
+  gap: 0.5rem;
+}
+
+.toolbar-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.toolbar-btn:hover {
+  opacity: 0.8;
+}
+
+/* Cores específicas para os botões */
+.btn-save { background-color: #10b981; } /* Verde */
+.btn-pdf { background-color: #ef4444; } /* Vermelho */
+.btn-image { background-color: #3b82f6; } /* Azul */
+.btn-share { background-color: #8b5cf6; } /* Roxo */
+
+/* Área de Trabalho (Split Screen) */
+.editor-workspace {
+  display: flex;
+  flex: 1;
+  overflow: hidden; /* Garante que o scroll fique apenas dentro das áreas filhas */
+}
+
+/* Área de Digitação (Textarea) */
+.editor-textarea {
+  width: 50%;
+  padding: 1.5rem;
+  border: none;
+  border-right: 1px solid #e5e7eb;
+  resize: none;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: #fafafa;
+  color: #374151;
+  outline: none;
+  overflow-y: auto;
+}
+
+/* Área de Visualização (Preview Markdown/LaTeX) */
+.editor-preview {
+  width: 50%;
+  padding: 1.5rem;
+  overflow-y: auto;
+  background-color: #ffffff;
+  color: #1f2937;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* --- Formatação básica para o Markdown não ficar feio --- */
+.editor-preview h1, 
+.editor-preview h2, 
+.editor-preview h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 0.3rem;
+}
+
+.editor-preview h1 { font-size: 2rem; }
+.editor-preview h2 { font-size: 1.5rem; }
+.editor-preview h3 { font-size: 1.25rem; border-bottom: none; }
+
+.editor-preview p {
+  margin-bottom: 1rem;
+}
+
+.editor-preview ul, 
+.editor-preview ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.editor-preview li {
+  margin-bottom: 0.25rem;
+}
+
+.editor-preview code {
+  background-color: #f3f4f6;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9em;
+}
+
+.editor-preview pre {
+  background-color: #1f2937;
+  color: #f8f8f2;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.editor-preview pre code {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+.editor-preview blockquote {
+  border-left: 4px solid #d1d5db;
+  padding-left: 1rem;
+  color: #6b7280;
+  font-style: italic;
+  margin-left: 0;
+  margin-bottom: 1rem;
+}

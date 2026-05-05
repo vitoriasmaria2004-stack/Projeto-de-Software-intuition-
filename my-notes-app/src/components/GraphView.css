@@ -1,0 +1,57 @@
+/* Contentor Principal do Grafo */
+.graph-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+/* Controlos Flutuantes (Botões) */
+.graph-controls {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 10;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.graph-btn {
+  padding: 0.5rem 1rem;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.graph-btn:active {
+  transform: translateY(1px);
+}
+
+.btn-auto {
+  background-color: #2563eb; /* Azul */
+}
+
+.btn-auto:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-manual {
+  background-color: #10b981; /* Verde */
+}
+
+.btn-manual:hover {
+  background-color: #059669;
+}
+
+/* Área de Renderização do ForceGraph */
+.graph-area {
+  flex: 1;
+  background-color: #f9fafb; /* Fundo cinzento muito claro para contraste com os nós */
+  overflow: hidden;
+}
