@@ -84,5 +84,6 @@ These methods are called on the ```FileRepository``` class. Note that in both th
 <img width="1684" height="1006" alt="carbon(1)" src="https://github.com/user-attachments/assets/1740d43d-3d9c-4326-beb1-9bf04f3c917b" />
 
 ## PADRÃO CRIACIONAL : Singleton
+O Singleton foi utilizado para assegurar que um recurso essencial da aplicação seja gerenciado por uma única instância. Com isso, o sistema mantém um comportamento consistente e evita a criação desnecessária de múltiplos objetos com a mesma responsabilidade.
 
 
