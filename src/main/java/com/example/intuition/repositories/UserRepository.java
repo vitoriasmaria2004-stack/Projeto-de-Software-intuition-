@@ -1,36 +1,70 @@
 package com.example.intuition.repositories;
 
 import java.util.Map;
+import java.util.HashMap;
 
 import org.springframework.stereotype.Repository;
 
-import java.util.HashMap;
-
 import com.example.intuition.entities.User;
+//O PADRÃO SINGLETON foi aplicado à classe UserRepository para garantir que exista
+//apenas uma única instância responsável pelo gerenciamento dos usuários da aplicação.
+//Dessa forma, todas as operações de cadastro e consulta utilizam a mesma fonte de dados,
+//evitando inconsistências causadas pela criação de multiplos repositórios 
+//e centralizando o controle dos usuários do sistema.
 
 @Repository
 public class UserRepository {
-    private static Map<Integer, User> users = new HashMap<>();
-    private static int incrementalId = 0;
 
-    public User createUser(String username, String email, String password) {
+    private static UserRepository instance;
+
+    private Map<Integer, User> users = new HashMap<>(); //CENTRALIZAÇÃO DOS USUÁRIOS : Todos os usuários ficam armazenados e um único local
+    private int incrementalId = 0; //Controle de IDS : Podem surgir IDs duplicados 
+
+    private UserRepository() { 
+    }
+
+    public static UserRepository getInstance() {
+        if (instance == null) {
+            instance = new UserRepository();
+        }
+        return instance;
+    }
+
+    public User createUser(String username, String email, String password) { //Fonte única de dados : Todas as operações => createUser() e getByUsernameOrEmail() devem consultar o mesmo conjunto de usuários  
+
         for (User u : users.values()) {
-            if (u.getUsername().equals(username) || u.getEmail().equals(email)) {
-                throw new RuntimeException("Username or email already in use");
+            if (u.getUsername().equals(username)
+                    || u.getEmail().equals(email)) {
+                throw new RuntimeException(
+                        "Username or email already in use");
             }
         }
+
         incrementalId++;
-        User newUser = new User(incrementalId, username, email, password);
+
+        User newUser = new User(
+                incrementalId,
+                username,
+                email,
+                password);
+
         users.put(incrementalId, newUser);
+
         return newUser;
     }
 
     public User getByUsernameOrEmail(String usernameOrEmail) {
+
         for (User u : users.values()) {
-            if (u.getUsername().equals(usernameOrEmail) || u.getEmail().equals(usernameOrEmail)) {
+
+            if (u.getUsername().equals(usernameOrEmail)
+                    || u.getEmail().equals(usernameOrEmail)) {
                 return u;
             }
         }
-        throw new RuntimeException("user " + usernameOrEmail + " was not found");
+
+        throw new RuntimeException(
+                "user " + usernameOrEmail + " was not found");
     }
 }
+
