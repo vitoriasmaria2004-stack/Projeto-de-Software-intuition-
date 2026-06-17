@@ -39,7 +39,10 @@ public class UserRepositoryProxy {
 //os controladores e o UserRepository. Dessa forma todas as operações de cadastro e consulta passam primeiro pelo Proxy,
 // que pode realizar verificações, registros  de aceeso ou validações antes de encaminhar a requisição para o repositório real.
 
-//PROBLEMA:
-//Muitos repositórios.
-//SOLUÇÃO :
-//Ter apenas um.
+
+// Problema:
+// Acesso direto ao repositório.
+// Solução:
+// Criar uma camada intermediária responsável
+// por validar e controlar o acesso antes de
+// encaminhar a requisição ao UserRepository.
