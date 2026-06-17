@@ -3,7 +3,17 @@ package com.example.intuition.commands;
 import java.util.Stack;
 
 public class CommandHistory {
-    
+    //classe:CommandHistory
+    //Ela é responsável por armazenar os comandos executados.
+    //Isso permite:registrar operações;desfazer ações;refazer ações.
+        //Fluxo:
+        //Controller
+            // ↓
+        //CommandHistory
+             //↓
+         //Command
+            //↓
+        //Repository
     private Stack<Command> pilhaDesfazer = new Stack<>();
     private Stack<Command> pilhaRefazer = new Stack<>();
     
@@ -56,3 +66,9 @@ public class CommandHistory {
         return pilhaRefazer.peek().getDescricao();
     }
 }
+
+//Principais vantagens :
+//Desacoplamento entre quem solicita e quem executa;
+//Organização das operações;
+//Facilidade para implementar histórico;
+//Possibilidade de desfazer e refazer ações.
