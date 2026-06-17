@@ -6,14 +6,7 @@ public class CommandHistory {
     //classe:CommandHistory
     //Ela é responsável por armazenar os comandos executados.
     //Isso permite:registrar operações;desfazer ações;refazer ações.
-        //Fluxo:
-        //Controller
-            // ↓
-        //CommandHistory
-             //↓
-         //Command
-            //↓
-        //Repository
+    
     private Stack<Command> pilhaDesfazer = new Stack<>();
     private Stack<Command> pilhaRefazer = new Stack<>();
     
