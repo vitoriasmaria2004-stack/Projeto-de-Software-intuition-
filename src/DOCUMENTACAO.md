@@ -1,6 +1,6 @@
 
 
-# 🧠 Projeto de Software: Intuition
+#  Projeto de Software: Intuition
 
 ![Status](https://img.shields.io/badge/status-em%20desenvolvimento-brightgreen)
 ![Versão](https://img.shields.io/badge/version-1.0.0-blue)
