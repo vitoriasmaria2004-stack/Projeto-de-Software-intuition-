@@ -201,28 +201,5 @@ npm run test:coverage
 
 ---
 
-## 9. Guia de Contribuição e Padrões
 
-Se for contribuir com este projeto, siga os passos abaixo:
-
-1. Crie uma branch para sua feature: `git checkout -b feature/minha-nova-feature` ou `bugfix/correcao-login`.
-2. Siga o padrão de Commits Semânticos:
-* `feat:` para novas funcionalidades.
-* `fix:` para correção de bugs.
-* `docs:` para alterações em documentação.
-* `refactor:` para refatoração de código.
-
-
-3. Faça o commit: `git commit -m 'feat: adiciona sistema de upload de arquivos'`
-4. Envie para o repositório: `git push origin feature/minha-nova-feature`
-5. Abra um **Pull Request**.
-
----
-
-## 10. Próximos Passos (Roadmap)
-
-* [ ] Implementar recuperação de senha por e-mail.
-* [ ] Criar dashboard analítico para os administradores.
-* [ ] Otimizar as queries de busca usando paginação.
-* [ ] Fazer o deploy em produção na AWS/Vercel.
 
