@@ -86,4 +86,14 @@ These methods are called on the ```FileRepository``` class. Note that in both th
 ## PADRÃO CRIACIONAL : Singleton
 O Singleton foi utilizado para assegurar que um recurso essencial da aplicação seja gerenciado por uma única instância. Com isso, o sistema mantém um comportamento consistente e evita a criação desnecessária de múltiplos objetos com a mesma responsabilidade.
 
+PROBLEMA que  o Singleton resolveu:
+Sem o Singleton, diferentes partes do sistema poderiam criar repositórios independentes, cada um com seu próprio conjunto de usuários. Isso poderia causar inconsistências. Com o Singleton, todos os componentes utilizam a mesma instância do repositório.
+
+Implementado no UserRepository com getInstance()
+
+## PADRÃO ESTRUTURAL : PROXY
+Implementado no UserRepositoryProxy como intermediário
+
+##PADRÃO COMPORTAMENTAL : COMMAND 
+Implementado na pasta commands para controle de Undo/Redo
 
