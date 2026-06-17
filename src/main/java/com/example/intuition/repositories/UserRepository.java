@@ -6,11 +6,6 @@ import java.util.HashMap;
 import org.springframework.stereotype.Repository;
 
 import com.example.intuition.entities.User;
-//O PADRÃO SINGLETON foi aplicado à classe UserRepository para garantir que exista
-//apenas uma única instância responsável pelo gerenciamento dos usuários da aplicação.
-//Dessa forma, todas as operações de cadastro e consulta utilizam a mesma fonte de dados,
-//evitando inconsistências causadas pela criação de multiplos repositórios 
-//e centralizando o controle dos usuários do sistema.
 
 @Repository
 public class UserRepository {
@@ -70,6 +65,15 @@ public class UserRepository {
                 "user " + usernameOrEmail + " was not found");
     }
 }
+
+
+//O PADRÃO SINGLETON foi aplicado à classe UserRepository para garantir que exista
+//apenas uma única instância responsável pelo gerenciamento dos usuários da aplicação.
+//Dessa forma, todas as operações de cadastro e consulta utilizam a mesma fonte de dados,
+//evitando inconsistências causadas pela criação de multiplos repositórios 
+//e centralizando o controle dos usuários do sistema.
+
+
 
 //Benefícios do Singleton
 //A utilização do Singleton trouxe alguns benefícios:
