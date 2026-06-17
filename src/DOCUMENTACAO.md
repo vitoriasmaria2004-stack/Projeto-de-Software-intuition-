@@ -1,5 +1,5 @@
 
-```markdown
+
 # 🧠 Projeto de Software: Intuition
 
 ![Status](https://img.shields.io/badge/status-em%20desenvolvimento-brightgreen)
@@ -55,7 +55,7 @@ As seguintes ferramentas foram escolhidas para o desenvolvimento:
 ## 4. Estrutura Detalhada de Diretórios
 Abaixo está o detalhamento do que cada pasta na `src/` faz:
 
-```text
+``text
 src/
 ├── config/           # Configurações globais (banco de dados, chaves de API, middlewares)
 ├── controllers/      # Lógica de controle: recebem a requisição (req) e retornam a resposta (res)
