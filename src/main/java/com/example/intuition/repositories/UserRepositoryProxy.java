@@ -2,27 +2,39 @@ package com.example.intuition.repositories;
 
 import com.example.intuition.entities.User;
 
-public class UserRepositoryProxy {
+public class UserRepositoryProxy {  //Foi criada uma nova classe: public class UserRepositoryProxy
+                                    //Essa classe possui uma referência para o repositório verdadeiro:private UserRepository repository;
 
     private UserRepository repository;
 
     public UserRepositoryProxy() {
-        repository = UserRepository.getInstance();
+        repository = UserRepository.getInstance(); //No construtor foi utilizado: repository = UserRepository.getInstance();
+                                                    //Assim o Proxy utiliza a instância única criada pelo Singleton.
     }
-
-    public User createUser(
-            String username,
+//Foram criados métodos equivalentes aos do repositório real:
+    public User createUser(  //Exemplo:
+            String username,  
             String email,
             String password) {
 
-        System.out.println(
+        System.out.println(                //Exemplo:
             "Proxy: verificando criação de usuário");
 
         return repository.createUser(
                 username,
                 email,
                 password);
-    }
+    } //O que acontece:
+        //O Proxy recebe a solicitação;
+        //Realiza verificações;
+        //Encaminha para o UserRepository.
+            //Fluxo:
+            //Controller
+                //↓
+            //UserRepositoryProxy
+                //↓
+            //UserRepository
+        //Dessa forma o acesso ao repositório fica controlado
 
     public User getByUsernameOrEmail(
             String usernameOrEmail) {
@@ -46,3 +58,12 @@ public class UserRepositoryProxy {
 // Criar uma camada intermediária responsável
 // por validar e controlar o acesso antes de
 // encaminhar a requisição ao UserRepository.
+
+//As vantagens obtidas:
+//Controle de acesso;
+//Camada adicional de segurança;
+//Maior desacoplamento;
+//Facilidade para futuras validações.
+//O cliente não acessa diretamente o repositório.
+//Tudo passa pelo Proxy.
+
