@@ -87,13 +87,21 @@ These methods are called on the ```FileRepository``` class. Note that in both th
 O Singleton foi utilizado para assegurar que um recurso essencial da aplicação seja gerenciado por uma única instância. Com isso, o sistema mantém um comportamento consistente e evita a criação desnecessária de múltiplos objetos com a mesma responsabilidade.
 
 PROBLEMA que  o Singleton resolveu:
-Sem o Singleton, diferentes partes do sistema poderiam criar repositórios independentes, cada um com seu próprio conjunto de usuários. Isso poderia causar inconsistências. Com o Singleton, todos os componentes utilizam a mesma instância do repositório.
+Sem o Singleton, diferentes partes do sistema poderiam criar repositórios independentes, cada um com seu próprio conjunto de usuários. Isso poderia causar inconsistências como Usuários duplicados,IDs conflitantes,Dados diferentes em cada repositório . Com o Singleton, todos os componentes utilizam a mesma instância do repositório.
 
 Implementado no UserRepository com getInstance()
 
 ## PADRÃO ESTRUTURAL : PROXY
+O Proxy foi utilizado para criar uma camada intermediária entre os controladores e o repositório real de usuários.
+
+PROBLEMA  que o Proxy resolveu: Sem o Proxy, os controladores acessavam diretamente o repositório, sem nenhum controle ou monitoramento. Isso dificultava Registrar logs de acesso,Validar permissões antes das operações,Adicionar verificações de segurança,Implementar cache de consultas.Com o Proxy, todas as operações passam por um ponto central onde é possível adicionar verificações, logs de auditoria e validações sem modificar o repositório original.
+
 Implementado no UserRepositoryProxy como intermediário
 
-## PADRÃO COMPORTAMENTAL : COMMAND 
+## PADRÃO COMPORTAMENTAL : COMMAND
+O Command foi utilizado para transformar cada operação do sistema (criar, editar e deletar usuários) em objetos independentes que encapsulam toda a informação necessária para executar e desfazer a ação. Um gerenciador central (CommandHistory) mantém o histórico de todas as operações realizadas, permitindo desfazer e refazer ações.
+
+PROBLEMA que o Command resolveu: Sem o Command, o sistema não possuía histórico de operações, o que significava que um usuário criado por engano não podia ser desfeito facilmente;não era possível refazer uma operação desfeita;não havia registro do que foi alterado e em qual ordem Erros do usuário não podiam ser revertidos. Com o Command, o sistema mantém duas pilhas (undo e redo) que armazenam todas as operações realizadas, permitindo ao usuário desfazer ações indesejadas com Ctrl+Z e refazê-las com Ctrl+Y.
+
 Implementado na pasta commands para controle de Undo/Redo
 
