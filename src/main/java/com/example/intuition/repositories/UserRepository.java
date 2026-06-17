@@ -15,13 +15,13 @@ import com.example.intuition.entities.User;
 @Repository
 public class UserRepository {
 
-    private static UserRepository instance;
+    private static UserRepository instance;//Essa variável armazena a única instância da classe
 
     private Map<Integer, User> users = new HashMap<>(); //CENTRALIZAÇÃO DOS USUÁRIOS : Todos os usuários ficam armazenados e um único local
     private int incrementalId = 0; //Controle de IDS : Podem surgir IDs duplicados 
 
-    private UserRepository() { 
-    }
+    private UserRepository() { //foi criado um construtor
+    }                          //O construtor privado impede que outras classes utilizem:new UserRepository();Ou seja, ninguém pode criar novos objetos diretamente.
 
     public static UserRepository getInstance() { //Esse método verifica:
                                                 //se a instância ainda não existe, ela é criada;
