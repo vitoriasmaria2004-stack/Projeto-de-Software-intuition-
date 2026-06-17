@@ -23,7 +23,10 @@ public class UserRepository {
     private UserRepository() { 
     }
 
-    public static UserRepository getInstance() {
+    public static UserRepository getInstance() { //Esse método verifica:
+                                                //se a instância ainda não existe, ela é criada;
+                                                //se já existe, a mesma instância é retornada.
+                                               // Assim garantimos que todo o sistema utilize exatamente o mesmo repositório.
         if (instance == null) {
             instance = new UserRepository();
         }
@@ -67,4 +70,17 @@ public class UserRepository {
                 "user " + usernameOrEmail + " was not found");
     }
 }
+
+//Benefícios do Singleton
+//A utilização do Singleton trouxe alguns benefícios:
+//Centralização do gerenciamento dos usuários;
+//Evita múltiplos repositórios;
+//Mantém os dados consistentes;
+//Facilita o controle do sistema.
+//Fluxo:
+//Sistema
+//↓
+//UserRepository único
+//↓
+//Dados dos usuários
 
