@@ -3,7 +3,7 @@ package com.example.intuition.commands;
 import com.example.intuition.entities.User;
 import com.example.intuition.repositories.UserRepositoryProxy;
 
-public class CriarUserCommand implements Command {
+public class CriarUserCommand implements Command { //Essa classe encapsula toda a lógica de criação de usuários.
     
     private UserRepositoryProxy proxy;
     private User usuario;
@@ -26,7 +26,6 @@ public class CriarUserCommand implements Command {
     @Override
     public void desfazer() {
         System.out.println("↩️ Desfazendo criação do usuário: " + usuario.getUsername());
-        // Aqui você pode implementar a lógica de remover o usuário
     }
     
     @Override
