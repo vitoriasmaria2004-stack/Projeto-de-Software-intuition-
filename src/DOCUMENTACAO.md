@@ -15,7 +15,6 @@
 6. [Variáveis de Ambiente](#6-variáveis-de-ambiente)
 7. [Documentação da API](#7-documentação-da-api)
 8. [Testes](#8-testes)
-9. [Guia de Contribuição e Padrões (Git Flow)](#9-guia-de-contribuição-e-padrões)
 
 ---
 
