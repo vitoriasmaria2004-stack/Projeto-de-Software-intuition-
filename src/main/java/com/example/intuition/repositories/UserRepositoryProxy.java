@@ -34,3 +34,12 @@ public class UserRepositoryProxy {
                 usernameOrEmail);
     }
 }
+
+// O padrão Proxy foi implementado através da classe UserRepositoryProxy, criada como intermediária entre
+//os controladores e o UserRepository. Dessa forma todas as operações de cadastro e consulta passam primeiro pelo Proxy,
+// que pode realizar verificações, registros  de aceeso ou validações antes de encaminhar a requisição para o repositório real.
+
+//PROBLEMA:
+//Muitos repositórios.
+//SOLUÇÃO :
+//Ter apenas um.
