@@ -94,6 +94,6 @@ Implementado no UserRepository com getInstance()
 ## PADRÃO ESTRUTURAL : PROXY
 Implementado no UserRepositoryProxy como intermediário
 
-##PADRÃO COMPORTAMENTAL : COMMAND 
+## PADRÃO COMPORTAMENTAL : COMMAND 
 Implementado na pasta commands para controle de Undo/Redo
 
