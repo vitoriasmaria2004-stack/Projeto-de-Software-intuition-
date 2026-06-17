@@ -67,7 +67,7 @@ src/
 ├── utils/            # Funções utilitárias (ex: formatadores de data, geradores de hash)
 └── app.js            # Arquivo principal que inicializa o servidor
 
-```
+``
 
 ---
 
