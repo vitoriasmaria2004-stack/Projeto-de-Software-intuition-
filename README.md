@@ -2,6 +2,10 @@
 
 A markdown editor with some nice features
 
+## Versão do Java
+
+Este projeto foi desenvolvido e testado utilizando **Java 26**.
+
 ## Stack
 
 - back-end: Spring Boot (Java)
